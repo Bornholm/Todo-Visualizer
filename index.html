@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Todo Visualizer</title>
+	<link rel="stylesheet" href="todo.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-todo.js"></script>	
+</head>
+<body>
+	<div id="todo-container"></div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#todo-container").todo({ 
+				url : "todo.txt",
+				headersAlias : {
+					dev : "Developper(s)",
+					due : "Due to"
+				}
+			});
+		});
+	</script>
+</body>
+</html>
+
+

@@ -1,0 +1,10 @@
+(A) Pathfinding system w/ A* @WebWorker @Test
+(B) Gestion Inputs +Pix dev:Will dev:Tom
+(D) Création niveau init +Pix +Game_Template
+(C) Création de nouveaux sprites de décors
+(E) 2010-05-02 Révision sprite personnage & animations due:2009-08-02
+x Système d'effets météos géolocalisés
+x Génération d'une carte de jeu @Truc @Muche
+x Gestion son
+
+
