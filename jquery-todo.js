@@ -257,7 +257,6 @@
 			opts.contentTransform && $.extend(contentTransform, opts.contentTransform);
 			
 			opts.url && _loadURL(opts.url, opts.xhr);
-	
 		};
 		
 		
