@@ -40,6 +40,14 @@
 
 					$.ajax(url, opts);
 			},
+
+			_loadLocal = function(text) {
+				_rawData = text;
+				_processRawData();
+				_sinkClosed();
+				_sortBy("priority");
+				_buildDOM();
+			},
 			
 			_sinkClosed = function() {
 				var that = this,
@@ -249,6 +257,7 @@
 			opts.contentTransform && $.extend(contentTransform, opts.contentTransform);
 			
 			opts.url && _loadURL(opts.url, opts.xhr);
+			opts.local && _loadLocal(opts.local);
 		};
 		
 		

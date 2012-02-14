@@ -1,4 +1,4 @@
-﻿# Todo.txt JQuery Plugin
+﻿## Todo.txt JQuery Plugin
 
 A quick & dirty vizualizer for **Todo.txt** file format, a great but simple way to create todo lists.
 
@@ -38,12 +38,13 @@ To create a new Todo :
 
 ## Options
 
- *url* : Todo.txt file url
+ **url** : Todo.txt file url
+ 	or
+ **local** : String to use as source *(\n is the line separator)*
 
- *headerAlias* : Columns headers alias
+ **headerAlias** : Columns headers alias
 
  _Example_
-
  ```javascript
  	var options = {
  		headerAlias : {
@@ -56,10 +57,9 @@ To create a new Todo :
  	};
  ```
 
- *contentTransform* : Transform cells content
+ **contentTransform** : Transform cells content
 
  _Example_
-
  ```javascript
  	var options = {
  		contentTransform : {
