@@ -22,28 +22,21 @@ To create a new Todo :
 ```html
 <div id="todo-container"></div> <!-- Todo List Container -->
 <script type="text/javascript">
-
 	$(document).ready(function(){
-
 		var options = {
 			url : "/path/to/your/todo.txt"
 		};
-
 		$("#todo-container").todo( options );
-
 	});
-
 </script>
 ```
 
 ## Options
 
- **url** : Todo.txt file url
+ - **url** : Todo.txt file url
  	or
- **local** : String to use as source *(\n is the line separator)*
-
- **headerAlias** : Columns headers alias
-
+ - **local** : String to use as source *(\n is the line separator)*
+ - **headerAlias** : Columns headers alias
  _Example_
  ```javascript
  	var options = {
@@ -56,9 +49,7 @@ To create a new Todo :
  		}
  	};
  ```
-
- **contentTransform** : Transform cells content
-
+ - **contentTransform** : Transform cells content
  _Example_
  ```javascript
  	var options = {
