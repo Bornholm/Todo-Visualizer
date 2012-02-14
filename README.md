@@ -1,5 +1,4 @@
-﻿
-Todo.txt - JQuery Plugin
+﻿Todo.txt - JQuery Plugin
 ======================
 
 A quick & dirty vizualizer for **Todo.txt** file format, a great but simple way to create todo lists.
@@ -8,6 +7,10 @@ You can learn more [here](https://github.com/ginatrapani/todo.txt-cli/wiki/The-T
 
 This plugin has been tested with JQuery 1.7.1
 
+Demo
+----
+
+Check the demo [here](http://bornholm.github.com/Todo-Visualizer)
 
 How to
 ------
