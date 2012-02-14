@@ -62,9 +62,7 @@ Options
  		contentTransform : {
  			contexts : function(content) { return "Context : "+content; }
  		}
-
  	};
-
 
 
 
