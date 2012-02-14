@@ -1,4 +1,5 @@
-﻿# Todo.txt JQuery Plugin
+﻿
+# Todo.txt JQuery Plugin
 
 A quick & dirty vizualizer for **Todo.txt** file format, a great but simple way to create todo lists.
 
@@ -28,11 +29,58 @@ To create a new Todo, in your html template
 
 	$(document).ready(function(){
 
-		$("#todo-container").todo({ 
+		var options = {
 			url : "/path/to/your/todo.txt"
-		});
-		
+		}
+
+		$("#todo-container").todo( options );
+
 	});
 
 </script>
 ```
+
+## Options Availables
+
+ *url* : _URL to a todo.txt file_
+ 
+ *headerAlias* : _Columns headers alias_
+
+ Example 
+
+ ```javascript
+
+ 	var options = {
+
+ 		headerAlias : {
+
+ 			contexts : "Context(s)",
+ 			projects : "Project(s)",
+ 			text : "Task",
+ 			startDate : "Started",
+ 			priority : "Priority"
+
+ 		}
+
+ 	};
+ 	 
+ ```
+
+ *contentTransform* : _Transform cells content_
+
+ Example 
+
+ ```javascript
+
+ 	var options = {
+
+ 		contentTransform : {
+ 			contexts : function(content) { return "Context : "+content; }
+ 		}
+
+ 	};
+ 	 
+ ```
+
+
+

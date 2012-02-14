@@ -13,16 +13,8 @@
 				addOnRegEx = /([^\s]+):([^\s]+)/g,
 				closedRegEx = /^x\s+/,
 				ignore = that.ignore = ["raw"],
-				headersAlias = that.headersAlias = {
-					contexts : "Context(s)",
-					projects : "Project(s)",
-					priority : "Priority",
-					startDate : "Task starded",
-					text : "Task"
-				},
-				contentTransform = that.contentTransform = {
-					closed : function(value) { return value ? "X" : ""}
-				},
+				headersAlias = that.headersAlias = {},
+				contentTransform = that.contentTransform = {},
 				separator = that.separator = ", ";
 	
 			
