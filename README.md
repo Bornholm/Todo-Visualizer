@@ -7,7 +7,7 @@ You can learn more [here](https://github.com/ginatrapani/todo.txt-cli/wiki/The-T
 This plugin has been tested with JQuery 1.7.1
 
 
-# How to
+## How to
 
 Include the followings files in your HTML template :
 
@@ -45,21 +45,15 @@ To create a new Todo :
  _Example_
 
  ```javascript
-
  	var options = {
-
  		headerAlias : {
-
  			contexts : "Context(s)",
  			projects : "Project(s)",
  			text : "Task",
  			startDate : "Started",
  			priority : "Priority"
-
  		}
-
  	};
- 	 
  ```
 
  *contentTransform* : Transform cells content
@@ -67,15 +61,12 @@ To create a new Todo :
  _Example_
 
  ```javascript
-
  	var options = {
-
  		contentTransform : {
  			contexts : function(content) { return "Context : "+content; }
  		}
 
  	};
- 	 
  ```
 
 
