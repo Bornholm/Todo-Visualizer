@@ -107,13 +107,22 @@
 						newRow.append(newCell);
 					}
 				});
+				$.each(that.addonsHeaders, function(i, header) {
+					if( ignore.indexOf(header) == -1 ) {
+						newCell = $("<th>").text( headersAlias[header] ? headersAlias[header] : header );
+						newCell.addClass(header);
+						newRow.append(newCell);
+					}
+				});
 				table.append(newRow);
 				
 				
 				// Tasks Rows
 				$.each($(that.tasks).filter(_doesTaskMatch), function(i, task) {
+
 						newRow = $("<tr>");
 						task.closed && newRow.addClass("closed");
+
 						$.each(that.tasksHeaders, function(i, columnName) {
 							if( ignore.indexOf(columnName) == -1 ) {
 								var transform = contentTransform[columnName];
@@ -125,6 +134,19 @@
 								newRow.append(newCell);
 							}
 						});
+
+						$.each(that.addonsHeaders, function(i, columnName) {
+							if( ignore.indexOf(columnName) == -1 ) {
+								var transform = contentTransform[columnName];
+								cellValue = task.addons[columnName];
+								cellValue = $.isFunction(transform) ? transform(cellValue) : cellValue;
+								newCell = $("<td>");
+								cellValue && newCell.text( $.isArray(cellValue) ? cellValue.join(separator) : cellValue);
+								newCell.addClass(columnName);
+								newRow.append(newCell);
+							}
+						});
+
 						rows[rows.length] = newRow;
 				});
 				
@@ -144,6 +166,7 @@
 				
 				that.tasks = tasks = [];
 				that.tasksHeaders = headers = defaultHeaders.slice();
+				that.addonsHeaders = addonsHeaders = [];
 				
 				
 				// Remove empty lines
@@ -181,14 +204,14 @@
 					// Add ons
 					addons = _extract(currentTask.raw, addOnRegEx);
 					if( addons ) {
+						currentTask.addons = {};
 						$.each( addons, function(i, add) {
 							add = add.split(":");
-						
-							if( currentTask[add[0]] ) {
-								currentTask[add[0]].push(add[1]);
+							if( currentTask.addons[add[0]] ) {
+								currentTask.addons[add[0]].push(add[1]);
 							} else {
-								currentTask[add[0]] = [add[1]];
-								headers.push(add[0]);
+								currentTask.addons[add[0]] = [add[1]];
+								addonsHeaders.push(add[0]);
 							}
 						});
 					}
