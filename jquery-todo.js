@@ -15,7 +15,7 @@
 				ignore = that.ignore = ["raw"],
 				headersAlias = that.headersAlias = {},
 				contentTransform = that.contentTransform = {},
-				separator = that.separator = ", ";
+				separator = ", ";
 	
 			
 			/** Privates Methods **/
@@ -221,8 +221,10 @@
 								currentTask.addons[add[0]].push(add[1]);
 							} else {
 								currentTask.addons[add[0]] = [add[1]];
-								addonsHeaders.push(add[0]);
+								addonsHeaders.indexOf(add[0]) === -1 && addonsHeaders.push(add[0]);
 							}
+
+
 						});
 					}
 					currentTask.text = _erase(currentTask.text, addOnRegEx);
@@ -284,6 +286,7 @@
 				opts = opts || {};
 				opts.headersAlias && $.extend(headersAlias, opts.headersAlias);
 				opts.contentTransform && $.extend(contentTransform, opts.contentTransform);
+				opts.separator && (separator = opts.separator);
 				opts.url && _loadURL(opts.url, opts.xhr);
 				opts.local && _loadLocal(opts.local);
 			};
