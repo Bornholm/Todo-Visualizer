@@ -72,6 +72,7 @@
 			},
 			
 			_buildDOM = function() {
+				element.empty();
 				_buildControls();
 				_buildTable();
 			},
@@ -246,18 +247,18 @@
 			
 			/** Public Methods **/
 			
+			this.reload = function(opts) {
+				opts = opts || {};
+				opts.headersAlias && $.extend(headersAlias, opts.headersAlias);
+				opts.contentTransform && $.extend(contentTransform, opts.contentTransform);
+				opts.url && _loadURL(opts.url, opts.xhr);
+				opts.local && _loadLocal(opts.local);
+			};
 			
 			/** Init **/
 			
 			element = $("<div class='todo'></div>").appendTo($(wrapper)),
-			
-			opts = opts || {};
-			
-			opts.headersAlias && $.extend(headersAlias, opts.headersAlias);
-			opts.contentTransform && $.extend(contentTransform, opts.contentTransform);
-			
-			opts.url && _loadURL(opts.url, opts.xhr);
-			opts.local && _loadLocal(opts.local);
+			this.reload(opts);
 		};
 		
 		
