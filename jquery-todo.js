@@ -230,7 +230,6 @@
 					}
 					currentTask.text = _erase(currentTask.text, addOnRegEx);
 					
-					console.log(currentTask);
 					tasks[tasks.length] = currentTask;
 				});
 				
