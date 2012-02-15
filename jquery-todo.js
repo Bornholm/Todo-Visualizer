@@ -61,11 +61,12 @@
 			},
 			
 			_sortBy = function(property) {
-				
 				var that = this,
 					tasks = that.tasks;
-				
 				tasks.sort(function(a, b) {
+					if( a[property].length + b[property].length === 0 ) return 0;
+					if( a[property].length > 0 && b[property].length === 0 ) return -1;
+					if( a[property].length === 0 && b[property].length > 0 ) return 1;
 					return a[property][0] > b[property][0];
 				});
 
