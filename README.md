@@ -33,6 +33,10 @@ To create a new Todo :
 		});
 	</script>
 
+Get the todo instance after creation :
+
+	var todo = $("#todo-container").data("todo");
+
 Options
 -------
 
@@ -41,6 +45,8 @@ Options
 **local** : String to use as source *( \n is the line separator )*
 
 **headerAlias** : Columns headers alias
+
+**separator** : Multiples values separator
  
 *Example*
  
@@ -65,4 +71,15 @@ Options
  	};
 
 
+Instance Method(s)
+----------------
 
+**todo.reload( opts )** : Reload with new options
+
+
+Todo
+----
+
+*Close date extraction
+*Search & filters controls
+*Sorting controls
