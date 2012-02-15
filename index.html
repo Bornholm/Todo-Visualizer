@@ -1,11 +1,15 @@
 ﻿<!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
-	<title>Todo Visualizer</title>
+	<title>Todo</title>
 	<link rel="stylesheet" href="todo.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery-todo.js"></script>
 	<style type="text/css">
+		body {
+			font-family : Helvetica, sans-serif;
+		}
+		
 	  #container {
 	      width: 600px;
 	      margin : auto;
@@ -18,18 +22,21 @@
 </head>
 <body>
 	<div id="container">
+		<h2>Todo.txt Jquery Plugin - Live Demo</h2>
 		<h3> Raw Todo.txt </h3>
 		<textarea id="todo-raw">
 (A) Pathfinding system w/ A* @WebWorker @Test
-(B) Gestion Inputs +Pix dev:Will dev:Tom
-(D) Création niveau init +Pix +Game_Template
-(C) Création de nouveaux sprites de décors
-(E) 2010-05-02 Révision sprite personnage & animations due:2009-08-02
-x Système d'effets météos géolocalisés
-x Génération d'une carte de jeu @Truc @Muche
-x Gestion son
-		</textarea>
-		<h3>Todo.txt Jquery Plugin</h3>
+(B) Input system +Pix dev:Will dev:Tom
+(D) Init game level +Pix +Game_Template
+(C) Environment sprites
+(E) 2010-05-02 Sprites & animations due:2009-08-02
+x Geolocation system
+x Map generation @Truc @Muche
+x Sound system
+
+
+Modify me !</textarea>
+		<h3>Result</h3>
 		<div id="todo-container"></div>
 	</div>
 	<script type="text/javascript">
@@ -40,7 +47,12 @@ x Gestion son
 				local : $("#todo-raw").val(),
 				headersAlias : {
 					dev : "Developper(s)",
-					due : "Due to"
+					due : "Deadline",
+					text : "Task",
+					startDate : "Task started",
+					contexts : "Context(s)",
+					projects : "Project(s)",
+					priority : "Priority"
 				}
 			});
 
