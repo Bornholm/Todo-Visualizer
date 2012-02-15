@@ -71,15 +71,15 @@ Options
  	};
 
 
-Instance Method(s)
-----------------
+Method(s)
+---------
 
-**todo.reload( opts )** : Reload with new options
+**reload( opts )** : Reload with new options
 
 
 Todo
 ----
 
-*Close date extraction
-*Search & filters controls
-*Sorting controls
+* Close date extraction
+* Search & filters controls
+* Sorting controls
