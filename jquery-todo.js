@@ -7,7 +7,7 @@
 				that = this,
 				defaultHeaders = ["priority", "startDate", "text", "projects", "contexts"],
 				priorityRegEx = /^\(([A-Z])\)\s{1}/,
-				startDateRegEx = /(^\([A-Z]\)\s{1})((\d{4})-(\d{2})-(\d{2}))/,
+				startDateRegEx = [ /(^\([A-Z]\)\s{1})((\d{4})-(\d{2})-(\d{2}))/, /^((\d{4})-(\d{2})-(\d{2}))/, /(^x\s{1})((\d{4})-(\d{2})-(\d{2}))/ ],
 				projectRegEx = /\+([^\s]+)/g,
 				contextRegEx = /@([^\s]+)/g,
 				addOnRegEx = /([^\s]+):([^\s]+)/g,
@@ -182,8 +182,18 @@
 					currentTask.text = currentTask.raw = text;
 					
 					// Start Date
-					currentTask.startDate = _extract(currentTask.raw, startDateRegEx, 2);
-					currentTask.text = _erase(currentTask.text, startDateRegEx, 2);
+
+					currentTask.startDate = _extract(currentTask.raw, startDateRegEx[0], 2);
+					currentTask.text = _erase(currentTask.text, startDateRegEx[0], 2);
+
+					if( currentTask.startDate.length === 0) {
+						currentTask.startDate = _extract(currentTask.raw, startDateRegEx[1]);
+						currentTask.text = _erase(currentTask.text, startDateRegEx[1]);
+					}
+					if( currentTask.startDate.length === 0) {
+						currentTask.startDate = _extract(currentTask.raw, startDateRegEx[2], 2);
+						currentTask.text = _erase(currentTask.text, startDateRegEx[2], 2);
+					}
 					
 					// Closed
 					currentTask.closed = _extract(currentTask.raw, closedRegEx).length > 0 ? true : false;
