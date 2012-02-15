@@ -3,8 +3,10 @@
 (D) Création niveau init +Pix +Game_Template
 (C) Création de nouveaux sprites de décors
 (E) 2010-05-02 Révision sprite personnage & animations due:2009-08-02
+2010-08-29 Test startDate without priority
 x Système d'effets météos géolocalisés
 x Génération d'une carte de jeu @Truc @Muche
 x Gestion son
-
+x 2009-02-13 Test tache close + startDate
+x 2010-25-20 test due:hey
 
